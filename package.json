@@ -1,0 +1,34 @@
+{
+  "name": "nzxt-logistica",
+  "version": "1.0.0",
+  "description": "Sistema integral de logística de NZXT",
+  "private": true,
+  "main": "electron/main.js",
+  "scripts": {
+    "dev": "concurrently \"vite\" \"wait-on http://localhost:5173 && cross-env ELECTRON_START_URL=http://localhost:5173 electron .\"",
+    "build": "vite build",
+    "package": "npm run build && electron-builder --win"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "latest",
+    "vite": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "lucide-react": "latest"
+  },
+  "devDependencies": {
+    "concurrently": "latest",
+    "cross-env": "latest",
+    "electron": "latest",
+    "electron-builder": "latest",
+    "wait-on": "latest",
+    "typescript": "latest"
+  },
+  "build": {
+    "appId": "com.nzxt.logistica",
+    "productName": "NZXT Logística",
+    "directories": { "output": "dist-installer" },
+    "win": { "target": ["nsis"], "icon": "icon.ico" },
+    "nsis": { "oneClick": false, "allowToChangeInstallationDirectory": true }
+  }
+}
