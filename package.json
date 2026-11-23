@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "concurrently \"vite\" \"wait-on http://localhost:5173 && cross-env ELECTRON_START_URL=http://localhost:5173 electron .\"",
     "build": "vite build",
-    "package": "npm run build && electron-builder --win"
+    "package": "npm run build && electron-builder --win --publish never"
   },
   "dependencies": {
     "@vitejs/plugin-react": "latest",
